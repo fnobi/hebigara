@@ -1,12 +1,11 @@
 Hebigara::Application.routes.draw do
   resources :bgimages
 
-
   resources :trunks
-
 
   resources :snakes
 
+  match 'snakes/:snake_id/newtrunk' => 'trunks#new', :as => 'new_snake_trunk', :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

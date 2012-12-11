@@ -16,16 +16,10 @@
  * reset style
  */
 
+
 body,h1,h2,ul,li {
     display: block;
     margin: 0px;padding: 0px;
-}
-
-a {
-    color: #eeeeee;
-}
-a:hover {
-    color: red;
 }
 
 /* 
@@ -88,8 +82,10 @@ nav li a {
     margin: 0em;
     border-right: solid 1px rgba(0, 0, 0, 0.2);
     border-left: solid 1px rgba(255, 255, 255, 0.2);
+    color: #eeeeee;
 }
 nav li a:hover {
+    color: red;
     background-color: rgba(0, 0, 0, 0.2);
 }
 

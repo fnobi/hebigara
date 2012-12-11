@@ -1,6 +1,18 @@
-<h1>Editing trunk</h1>
+<header id="header">
+  <h1>Editing trunk: <%= @trunk.snake.name %></h1>
+</header>
 
-<%= render 'form' %>
+<section id="content">
+  <section class="snakecage">
+    <h2>edit snake info</h2>
+    <%= render 'form' %>
+  </section>
 
-<%= link_to 'Show', @trunk %> |
-<%= link_to 'Back', trunks_path %>
+  <nav>
+    <ul>
+      <li><%= link_to 'Show', @trunk.snake %></li>
+      <li><%= link_to 'Back', edit_snake_path(@trunk.snake) %></li>
+    </ul>
+  </nav>
+
+</section>

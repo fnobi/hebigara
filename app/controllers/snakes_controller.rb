@@ -42,6 +42,16 @@ class SnakesController < ApplicationController
   def create
     @snake = Snake.new(params[:snake])
 
+    @snake.trunk << Trunk.create({
+      :bgcolor => "#292",
+      :length => 4
+    })
+
+    @snake.trunk << Trunk.create({
+      :bgcolor => "#292",
+      :length => 4
+    })
+
     respond_to do |format|
       if @snake.save
         format.html { redirect_to @snake, :notice => 'Snake was successfully created.' }

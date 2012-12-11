@@ -1,5 +1,21 @@
-<h1>New trunk</h1>
+<header id="header">
+  <h1>New trunk: <% if @trunk.snake then %><%= @trunk.snake.name %><% end %></h1>
+</header>
 
-<%= render 'form' %>
+<section id="content">
+  <section class="snakecage">
+    <h2>input trunk info</h2>
+    <%= render 'form' %>
+  </section>
 
-<%= link_to 'Back', trunks_path %>
+  <nav>
+    <ul>
+      <% if @trunk.snake %>
+      <li><%= link_to 'Back', edit_snake_path(@trunk.snake) %></li>
+      <% else %>
+      <li><%= link_to 'Back', trunks %></li>
+      <% end %>
+    </ul>
+  </nav>
+
+</section>

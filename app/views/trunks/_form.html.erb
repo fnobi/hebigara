@@ -23,10 +23,16 @@
     <%= f.label :bgimage_id %><br />
     <%= f.number_field :bgimage_id %>
   </div>
+  <% if !@trunk.snake %>
   <div class="field">
     <%= f.label :snake_id %><br />
     <%= f.number_field :snake_id %>
   </div>
+  <% else %>
+  <div class="field">
+    <%= f.hidden_field :snake_id  %>
+  </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -26,6 +26,10 @@ class TrunksController < ApplicationController
   def new
     @trunk = Trunk.new
 
+    if params[:snake_id]
+      @trunk.snake_id = params[:snake_id]
+    end
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @trunk }
@@ -44,8 +48,8 @@ class TrunksController < ApplicationController
 
     respond_to do |format|
       if @trunk.save
-        format.html { redirect_to @trunk, :notice => 'Trunk was successfully created.' }
-        format.json { render :json => @trunk, :status => :created, :location => @trunk }
+        format.html { redirect_to @trunk.snake || @trunk, :notice => 'Trunk was successfully created.' }
+        format.json { render :json => @trunk.snake || @trunk, :status => :created, :location => @trunk }
       else
         format.html { render :action => "new" }
         format.json { render :json => @trunk.errors, :status => :unprocessable_entity }
@@ -60,7 +64,7 @@ class TrunksController < ApplicationController
 
     respond_to do |format|
       if @trunk.update_attributes(params[:trunk])
-        format.html { redirect_to @trunk, :notice => 'Trunk was successfully updated.' }
+        format.html { redirect_to @trunk.snake || @trunk, :notice => 'Trunk was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
@@ -73,10 +77,12 @@ class TrunksController < ApplicationController
   # DELETE /trunks/1.json
   def destroy
     @trunk = Trunk.find(params[:id])
+    redirect_target = @trunk.snake ? edit_snake_path(@trunk.snake) : trunks_url
+
     @trunk.destroy
 
     respond_to do |format|
-      format.html { redirect_to trunks_url }
+      format.html { redirect_to redirect_target }
       format.json { head :no_content }
     end
   end

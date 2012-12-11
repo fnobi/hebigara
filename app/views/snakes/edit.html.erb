@@ -3,7 +3,34 @@
 </header>
 
 <section id="content">
-  <%= render 'form' %>
+  <section class="snakecage">
+    <h2>edit snake info</h2>
+    <%= render 'form' %>
+  </section>
+
+  <section class="snakecage">
+    <h2>edit trunks</h2>
+    <table>
+      <% index = 1 %>
+      <% @snake.trunk.each do |trunk| %>
+      <% @trunk = trunk %>
+      <tr>
+	<td><%= index %></td>
+	<td>
+	  <%= render :template => "trunks/_trunkdiv" %>
+	</td>
+	<td><%= link_to "Edit", edit_trunk_path(trunk) %></td>
+	<td><%= link_to "Destroy", trunk, :method => :delete, :data => { :confirm => "Are you sure?"} %></td>
+      </tr>
+      <% index = index + 1 %>
+      <% end %>
+      <tr>
+	<td colspan="3">
+	  <%= link_to "add trunk", new_snake_trunk_path(@snake) %>
+	</td>
+      </tr>
+    </table>
+  </section>
 
   <nav>
     <ul>
