@@ -1,0 +1,28 @@
+<h1>Listing snakes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @snakes.each do |snake| %>
+  <tr>
+    <td><%= snake.name %></td>
+    <td>
+      <% @snake = snake %>
+      <%= render 'snakediv' %>
+    </td>
+    <td><%= link_to 'Show', snake %></td>
+    <td><%= link_to 'Edit', edit_snake_path(snake) %></td>
+    <td><%= link_to 'Destroy', snake, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Snake', new_snake_path %>

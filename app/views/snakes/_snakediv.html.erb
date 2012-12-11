@@ -1,0 +1,8 @@
+<div class="snake">
+<% @snake.trunk.each do |trunk| %>
+  <% @trunk = trunk %>
+  <% @is_head = (trunk == @snake.trunk.first) %>
+  <% @is_tail = (trunk == @snake.trunk.last) %>
+  <%= render :template => "trunks/_trunkdiv" %>
+<% end %>
+</div>

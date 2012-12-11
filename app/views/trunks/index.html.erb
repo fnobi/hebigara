@@ -1,0 +1,21 @@
+<h1>Listing trunks</h1>
+
+<table>
+
+<% @trunks.each do |trunk| %>
+  <tr>
+    <td><%= Snake.find(trunk.snake_id).name %></td>
+    <td>
+      <% @trunk = trunk %>
+      <%= render 'trunkdiv' %>
+    </td>
+    <td><%= link_to 'Show', trunk %></td>
+    <td><%= link_to 'Edit', edit_trunk_path(trunk) %></td>
+    <td><%= link_to 'Destroy', trunk, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Trunk', new_trunk_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Path:</b>
+  <%= @bgimage.path %>
+</p>
+
+<p>
+  <b>Fixed:</b>
+  <%= @bgimage.fixed %>
+</p>
+
+
+<%= link_to 'Edit', edit_bgimage_path(@bgimage) %> |
+<%= link_to 'Back', bgimages_path %>

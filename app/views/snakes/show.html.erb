@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @snake.name %>
+  <%= render 'snakediv'%>
+</p>
+
+
+<%= link_to 'Edit', edit_snake_path(@snake) %> |
+<%= link_to 'Back', snakes_path %>

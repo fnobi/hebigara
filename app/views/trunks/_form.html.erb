@@ -1,0 +1,33 @@
+<%= form_for(@trunk) do |f| %>
+  <% if @trunk.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trunk.errors.count, "error") %> prohibited this trunk from being saved:</h2>
+
+      <ul>
+      <% @trunk.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :length %><br />
+    <%= f.number_field :length %>
+  </div>
+  <div class="field">
+    <%= f.label :bgcolor %><br />
+    <%= f.text_field :bgcolor %>
+  </div>
+  <div class="field">
+    <%= f.label :bgimage_id %><br />
+    <%= f.number_field :bgimage_id %>
+  </div>
+  <div class="field">
+    <%= f.label :snake_id %><br />
+    <%= f.number_field :snake_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

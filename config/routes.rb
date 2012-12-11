@@ -1,4 +1,13 @@
 Hebigara::Application.routes.draw do
+  resources :bgimages
+
+
+  resources :trunks
+
+
+  resources :snakes
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

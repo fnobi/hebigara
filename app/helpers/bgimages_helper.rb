@@ -1,0 +1,2 @@
+module BgimagesHelper
+end

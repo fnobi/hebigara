@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Length:</b>
+  <%= @trunk.length %>
+</p>
+
+<p>
+  <b>Bgcolor:</b>
+  <%= @trunk.bgcolor %>
+</p>
+
+<p>
+  <b>Bgimage:</b>
+  <%= @trunk.bgimage_id %>
+</p>
+
+<p>
+  <b>Snake:</b>
+  <%= @trunk.snake_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_trunk_path(@trunk) %> |
+<%= link_to 'Back', trunks_path %>

@@ -8,6 +8,72 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
+
+
  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.trunk {
+    height: 3em;
+}
+
+.snake {
+    overflow: hidden;
+    -webkit-animation-name: snake-clawl;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease;
+    -webkit-transform-origin: left center;
+    position: relative;
+}
+
+.snake .trunk {
+    float: left;
+}
+
+.trunk.head {
+    -webkit-border-radius: 1.5em 0em 0em 1.5em;
+}
+.trunk.head:before {
+    content: ' ';
+    display: block;
+    height: 0.6em; width: 0.6em;
+    -webkit-border-radius: 0.5em;
+    background-color: black;
+    border: solid 0.2em white;
+}
+.trunk.head:after {
+    content: ' ';
+    display: block;
+    height: 0.6em; width: 0.6em;
+    -webkit-border-radius: 0.5em;
+    background-color: black;
+    border: solid 0.2em white;
+}
+
+.trunk.tail {
+    -webkit-border-radius: 0em 1.5em 1.5em 0em;
+}
+
+@-webkit-keyframes snake-clawl {
+    0% {
+        -webkit-transform: scale(1, 1);
+    }
+    50% {
+        -webkit-transform: scale(0.9, 1.1);
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+    }
+}

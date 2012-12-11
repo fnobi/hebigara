@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Hebigara::Application.config.secret_token = '4facb411cb546b84f13b86d10eeaeef767401925fb12e0994fee858222cd1841af00efa9e5a57364e5f31d40692a64f1feb74b4b6d5cebaecc1738588c2393a0'
+Hebigara::Application.config.secret_token = '43a0995dc2a0411f24b3d4e60669fccd6514649dfb16f534f27aba3b2a88a8ffc656d1f9cb0931112b03795e069c3dca6bdacd63d484d1122fea137b6f88f3b2'
