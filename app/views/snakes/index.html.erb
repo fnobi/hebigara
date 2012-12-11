@@ -1,28 +1,22 @@
-<h1>Listing snakes</h1>
+<header id="header">
+  <h1>Listing snakes</h1>
+</header>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<section id="content">
+  <% @snakes.each do |snake| %>
+  <article class="snakecage">
+    <h2><%= snake.name %></h2>
+    <% @snake = snake %>
+    <%= render 'snakediv' %>
 
-<% @snakes.each do |snake| %>
-  <tr>
-    <td><%= snake.name %></td>
-    <td>
-      <% @snake = snake %>
-      <%= render 'snakediv' %>
-    </td>
-    <td><%= link_to 'Show', snake %></td>
-    <td><%= link_to 'Edit', edit_snake_path(snake) %></td>
-    <td><%= link_to 'Destroy', snake, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Snake', new_snake_path %>
+    <nav>
+      <ul>
+	<li><%= link_to 'Show', snake %></li>
+	<li><%= link_to 'Edit', edit_snake_path(snake) %></li>
+	<li><%= link_to 'Destroy', snake, :method => :delete, :data => { :confirm => 'Are you sure?' } %></li>
+      </ul>
+    </nav>
+  </article>
+  <% end %>
+  <%= link_to 'New Snake', new_snake_path %>
+</section>

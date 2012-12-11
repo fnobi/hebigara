@@ -12,17 +12,95 @@
 
  */
 
+/* 
+ * reset style
+ */
 
+body,h1,h2,ul,li {
+    display: block;
+    margin: 0px;padding: 0px;
+}
 
+a {
+    color: #eeeeee;
+}
+a:hover {
+    color: red;
+}
 
+/* 
+ * wrap
+ */
+#wrap {
+    max-width: 600px;
+    margin: auto;    
+}
 
+#notice {
+    color: red;
+    background-color: #ffeeee;
+    margin: 0em 1em 0em 4em;; padding: 1em;
+    
+}
 
+#content {
+    padding: 1em; margin: 0em;
+    background-color: #ccffcc;
+    border-style: solid solid none solid;
+    border-width: 1px;
+    border-color: #229922;
+    -webkit-border-radius: 1em;
+    -webkit-box-shadow: 0em 1em 0em #292;
+}
 
+#header {
+    padding: 1em;
+    text-align: center;
+}
 
+.snakecage {
+    background-color: #eeffee;
+    padding: 1em; margin: 1em 0em;
+    -webkit-border-radius: 0.5em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.2) rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.2) rgba(0, 0, 0, 0.2);
+}
 
+.snakecage h2 {
+    color: #252;
+    text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.5);
+}
 
+nav {
+    background-color: #862;
+    margin-top: 1em;
+    border-bottom: solid 1px #741;    
+}
 
+nav ul {
+    overflow: hidden;
+    border-right: solid 1px rgba(0, 0, 0, 0.2);
+}
+nav li a {
+    float: left;
+    padding: 0.2em 0.5em;
+    margin: 0em;
+    border-right: solid 1px rgba(0, 0, 0, 0.2);
+    border-left: solid 1px rgba(255, 255, 255, 0.2);
+}
+nav li a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
 
+#footer {
+    color: white;
+    padding: 0.5em 1em;
+    text-align: right;
+    background-color: #229922;
+    background: -webkit-gradient(linear, left top, left bottom, from(#229922), to(#228822));
+    -webkit-border-radius: 0em 0em 1em 1em;
+}
 
 
 .trunk {
@@ -41,6 +119,8 @@
 
 .snake .trunk {
     float: left;
+    border-bottom: solid 3px rgba(0, 0, 0, 0.2);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(0.3, rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0)));
 }
 
 .trunk.head {
@@ -72,7 +152,7 @@
         -webkit-transform: scale(1, 1);
     }
     50% {
-        -webkit-transform: scale(0.9, 1.1);
+        -webkit-transform: scale(0.95, 1.05);
     }
     100% {
         -webkit-transform: scale(1, 1);

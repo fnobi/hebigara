@@ -1,11 +1,17 @@
+<header id="header">
+  <h1><%= @snake.name %></h1>
+</header>
+<% if notice then %>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @snake.name %>
-  <%= render 'snakediv'%>
-</p>
-
-
-<%= link_to 'Edit', edit_snake_path(@snake) %> |
-<%= link_to 'Back', snakes_path %>
+<% end %>
+<section id="content">
+  <article class="snakecage">
+    <%= render 'snakediv'%>
+    <nav>
+      <ul>
+	<li><%= link_to 'Edit', edit_snake_path(@snake) %></li>
+	<li><%= link_to 'Back', snakes_path %></li>
+      </ul>
+    </nav>
+  </article>
+</section>

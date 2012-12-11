@@ -1,6 +1,14 @@
-<h1>Editing snake</h1>
+<header id="header">
+  <h1>Editing snake: <%= @snake.name %></h1>
+</header>
 
-<%= render 'form' %>
+<section id="content">
+  <%= render 'form' %>
 
-<%= link_to 'Show', @snake %> |
-<%= link_to 'Back', snakes_path %>
+  <nav>
+    <ul>
+      <li><%= link_to 'Show', @snake %></li>
+      <li><%= link_to 'Back', snakes_path %></li>
+    </ul>
+  </nav>
+</section>
